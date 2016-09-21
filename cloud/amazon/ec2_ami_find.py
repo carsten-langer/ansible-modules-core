@@ -374,7 +374,7 @@ def main():
             'ami_id': image.id,
             'architecture': image.architecture,
             'block_device_mapping': get_block_device_mapping(image),
-            'creationDate': image.creationDate,
+            'creationDate': getattr(image, 'creationDate', None),
             'description': image.description,
             'hypervisor': image.hypervisor,
             'is_public': image.is_public,
